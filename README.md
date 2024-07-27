@@ -19,3 +19,4 @@ This website is desinged for users to create their own profile to share and like
 This webpage is deployed to GitHub Pages
 
 - [Deployment Link](https://terranova9o9.github.io/se_project_spots/)
+- [Video Tour](https://www.loom.com/share/e8948d2b45ab4f5395e3041983d36e05?sid=adb744eb-6259-4b28-af53-2bd322ea9a70)
