@@ -13,6 +13,7 @@ This website is desinged for users to create their own profile to share and like
 - BEM
 - Responsive Design
 - Figma
+- Javascript
 
 ## Deployment
 
