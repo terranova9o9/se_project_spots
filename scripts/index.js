@@ -64,7 +64,7 @@ function handleEditFormSubmit(evt) {
   evt.preventDefault ();
   profileName.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
-  editProfileModal.classList.remove ('modal_opened');
+  closeModal();
 };
 
 profileEditButton.addEventListener ('click', openModal);
