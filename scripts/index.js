@@ -96,6 +96,12 @@ cardModalCloseButton.addEventListener ('click', () => {
   closeModal(cardModal);
 })
 
+function handleCardFormSubmit(evt) {
+  evt.preventDefault ();
+  profileName.textContent = editModalNameInput.value;
+  profileDescription.textContent = editModalDescriptionInput.value;
+  closeModal(editProfileModal);
+};
 
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
