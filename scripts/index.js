@@ -20,7 +20,7 @@ const initialCards = [
 ];
 
 
-// Profile Form
+
 const editProfileModal = document.querySelector("#edit-profile-modal");
 const editModalNameInput = editProfileModal.querySelector("#profile-name-input");
 const editModalDescriptionInput = editProfileModal.querySelector("#profile-description-input");
@@ -29,7 +29,7 @@ const profileName = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 
 
-// Card Form
+
 const cardModal = document.querySelector("#add-card-modal");
 const cardModalImageLinkInput = cardModal.querySelector("#add-card-link-input");
 const cardModalCaptionInput = cardModal.querySelector("#add-card-caption-input");
@@ -37,14 +37,14 @@ const cardForm = cardModal.querySelector(".modal__form");
 const cardCaption = document.querySelector(".card__title");
 
 
-// Modal Elements
+
 const profileEditButton = document.querySelector(".profile__edit-btn");
 const cardModalButton = document.querySelector(".profile__add-btn");
 const profileCloseButton = editProfileModal.querySelector(".modal__close-btn");
 const cardModalCloseButton = cardModal.querySelector(".modal__close-btn");
 
 
-// Card Template Elements
+
 const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
 const cardImage = document.querySelector(".card__image");
@@ -52,7 +52,9 @@ const cardImage = document.querySelector(".card__image");
 const previewModal = document.querySelector("#preview-modal");
 const previewModalImageElement = previewModal.querySelector(".modal__image");
 const previewModalCaptionElement = previewModal.querySelector(".modal__caption");
-
+const previewModalCloseBtn = previewModal.querySelector(
+  ".modal__close-btn_type_preview"
+);
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
@@ -130,7 +132,9 @@ cardModalCloseButton.addEventListener ('click', () => {
   closeModal(cardModal);
 })
 
-
+previewModalCloseBtn.addEventListener("click", () => {
+  closeModal(previewModal);
+});
 
 initialCards.forEach((item) => {
   const cardElement = getCardElement(item);
