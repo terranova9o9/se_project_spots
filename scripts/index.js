@@ -51,7 +51,7 @@ const cardImage = document.querySelector(".card__image");
 
 const previewModal = document.querySelector("#preview-modal");
 const previewModalImageElement = previewModal.querySelector(".modal__image");
-const previewModalCaptionElement = previewModal.querySelector(".modal__image-caption");
+const previewModalCaptionElement = previewModal.querySelector(".modal__caption");
 
 
 function getCardElement(data) {

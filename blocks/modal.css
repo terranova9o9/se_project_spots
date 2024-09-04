@@ -39,6 +39,10 @@
   object-fit: cover;
 }
 
+.modal__caption {
+
+}
+
 .modal__close-btn {
   background-image: url(../images/close-btn-op.svg);
   background-color: transparent;
@@ -57,7 +61,7 @@
   opacity: 100%;
 }
 
-.modal__close_type_preview {
+.modal__close-btn_type_preview {
   background-image: url(../images/preview_close_icon.svg);
   background-color: transparent;
   border-style: none;
@@ -129,8 +133,6 @@
   cursor: pointer;
   opacity: 80%;
 }
-
-
 
 
 @media screen and (max-width: 627px) {
