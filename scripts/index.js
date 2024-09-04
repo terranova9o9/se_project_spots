@@ -49,17 +49,36 @@ const cardTemplate = document.querySelector("#card-template");
 const cardList = document.querySelector(".cards__list");
 const cardImage = document.querySelector(".card__image");
 
+const previewModal = document.querySelector("#preview-modal");
+const previewModalImageElement = previewModal.querySelector(".modal__image");
+const previewModalCaptionElement = previewModal.querySelector(".modal__image-caption");
 
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
   const cardNameElement = cardElement.querySelector(".card__title");
   const cardImageElement = cardElement.querySelector(".card__image");
+  const cardLikeBtn = cardElement.querySelector(".card__like-button");
+  const cardDeleteBtn = cardElement.querySelector(".card__delete-button")
 
   cardNameElement.textContent = data.name;
   cardImageElement.src = data.link;
   cardImageElement.alt = data.name;
 
+  cardLikeBtn.addEventListener("click", () => {
+    cardLikeBtn.classList.toggle("card__like-button_liked")
+  });
+
+  cardDeleteBtn.addEventListener("click", () => {
+    cardElement.remove()
+  });
+
+  cardImageElement.addEventListener("click", () => {
+    openModal(previewModal);
+    previewModalImageElement.src = data.link;
+    previewModalImageElement.alt = data.name;
+    previewModalCaptionElement.textContent = data.name;
+  });
 
   return cardElement;
 };
