@@ -107,6 +107,7 @@ function handleCardFormSubmit(evt) {
   const cardElement = getCardElement(inputValues);
   cardList.prepend(cardElement);
   closeModal(cardModal);
+  cardForm.reset();
 };
 
 

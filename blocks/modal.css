@@ -9,16 +9,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  visibility: hidden;
   padding: 0 20px;
   z-index: 10;
-  transition: visibility 0s, opacity 0.5s;
   pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 0.5s, opacity 0.5s linear;
 }
 
 .modal_opened {
-  visibility: visible;
   pointer-events: all;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s linear;
 }
 
 .modal__container {
@@ -31,7 +34,7 @@
   box-sizing: border-box;
 }
 
-.modal__preview_container{
+.modal__preview {
   padding: 0;
   background: none;
   display: flex;
@@ -191,6 +194,7 @@
   .modal__image {
     width: 100%;
     border-radius: 4px;
+    max-width: max-content;
   }
 
   .modal__caption {
