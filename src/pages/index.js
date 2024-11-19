@@ -1,3 +1,10 @@
+import "./index.css";
+import headerSrc from "../images/spots_logo.svg"
+import avatarSrc from "../images/avatar.jpg"
+import pencilSrc from "../images/edit-icon.svg"
+import plusSrc from "../images/plus-icon.svg"
+import { enableValidation, validationConfig, disableButton } from "../scripts/validation.js";
+
 const initialCards = [
 {
   name: "Val Thorens", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg"
@@ -18,6 +25,15 @@ const initialCards = [
   name: "Mountain house", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg"
 },
 ];
+
+const headerImg = document.getElementById("headerLogo");
+headerImg.src = headerSrc;
+const avaterImg = document.getElementById("profileAvatar");
+avaterImg.src = avatarSrc;
+const pencilImg = document.getElementById("profilePencil");
+pencilImg.src = pencilSrc;
+const plusImg = document.getElementById("profilePlusSign");
+plusImg.src = plusSrc;
 
 
 
@@ -129,14 +145,14 @@ function handleCardFormSubmit(evt) {
   cardList.prepend(cardElement);
   cardForm.reset();
   closeModal(cardModal);
-  disableButton(cardSubmitBtn, settings);
+  disableButton(cardSubmitBtn, validationConfig);
 };
 
 
 profileEditButton.addEventListener ('click', () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
-  resetValidation(editProfileModal, [editModalNameInput, editModalDescriptionInput]);
+  //resetValidation(editProfileModal, [editModalNameInput, editModalDescriptionInput]);
   openModal(editProfileModal);
 });
 
@@ -166,3 +182,4 @@ initialCards.forEach((item) => {
   cardList.append(cardElement);
 });
 
+enableValidation(validationConfig);
