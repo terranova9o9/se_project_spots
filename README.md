@@ -14,6 +14,9 @@ This website is desinged for users to create their own profile to share and like
 - Responsive Design
 - Figma
 - Javascript
+- Node Package Module
+- API
+- JSON
 
 ## Deployment
 
